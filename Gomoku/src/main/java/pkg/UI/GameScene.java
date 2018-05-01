@@ -20,7 +20,6 @@ import pkg.DB.IDbFunctions;
 import pkg.DB.DbFunctionsImpJDBC;
 import pkg.DB.DbFunctionsImplHIB;
 import pkg.DB.Match;
-import pkg.DB.APIName;
 import pkg.Files.FileFunctions;
 import pkg.util.Logging;
 import pkg.util.ParsedLine;
