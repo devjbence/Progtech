@@ -1,0 +1,6 @@
+The Application uses JavaFx for the GUI, contains tests for the logic.
+The database stores the users, and the saved matches.
+A saved match record has the name of the textfile which contains the
+saved gamestate.
+
+Made by: Bence Juras ( 2018 )

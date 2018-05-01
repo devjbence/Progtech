@@ -1,0 +1,32 @@
+        
+
+.root{
+	-fx-background-color: black;
+    
+}
+
+.label{
+    -fx-text-fill: yellow;
+}
+
+.button{
+    -fx-background-color:white;
+    -fx-text-fill: red;
+    -fx-font: 16px "Arial";
+    -fx-pref-width: 50px;
+    -fx-pref-height:50px;
+    -fx-border-color:  red;
+    -fx-border-width:2;
+}
+
+.button:hover{
+    -fx-background-color:#f7f9fc;
+}
+
+.button:active{
+    -fx-background-color:green;
+}
+
+.button:pressed{
+    -fx-background-color:blue;
+}
