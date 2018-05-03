@@ -15,12 +15,27 @@ import org.hibernate.Transaction;
 import pkg.Player;
 import pkg.util.Logging;
 
+/**
+ * Creates a DAO object using Hibarnate.
+ */
 public class DbFunctionsImplHIB implements IDbFunctions{
 
+	/**
+	 * Main session.
+	 */
 	private Session session;
+	/**
+	 * For transactions.
+	 */
 	private Transaction tx;
+	/**
+	 * Match entity.
+	 */
 	private Match match;
 	
+	/**
+	 * Creates the {@link DbFunctionsImplHIB} object.
+	 */
 	public DbFunctionsImplHIB(){}
 	
 	@Override

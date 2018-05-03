@@ -3,7 +3,6 @@ pkg/UI/GameScene.class
 pkg/Logic.class
 pkg/Board.class
 pkg/Player.class
-pkg/DB/APIName.class
 pkg/UI/LoadWindow.class
 pkg/DB/Connector.class
 pkg/UI/FXWindow.class

@@ -31,7 +31,7 @@ public class User {
 	@Column(name = "NAME")
 	private String name;
 	/**
-	 * Password of the user.
+	 * Password for the user.
 	 */
 	@Column(name = "PASSW")
 	private String passw;
@@ -49,28 +49,55 @@ public class User {
 		Logging.getLogger().info("User object created");
 	}
 	
+	/**
+	 * Creates the User object.
+	 */
 	public User(){}
 
+	/**
+	 * Getter for user id.
+	 * @return {@link user_id}
+	 */
 	public int getUser_id() {
 		return user_id;
 	}
 
+	/**
+	 * Getter for user name.
+	 * @return {@link name}
+	 */
 	public String getName() {
 		return name;
 	}
 
+	/**
+	 * Getter for user password.
+	 * @return {@link passw}
+	 */
 	public String getPassw() {
 		return passw;
 	}
 
+	/**
+	 * Setter for user id.
+	 * @param user_id to set
+	 */
 	public void setUser_id(int user_id) {
 		this.user_id = user_id;
 	}
 
+	/**
+	 * Setter for user name.
+	 * @param name to set
+	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 
+	/**
+	 * Setter for user password.
+	 * @param passw to set
+	 */
 	public void setPassw(String passw) {
 		this.passw = passw;
 	}

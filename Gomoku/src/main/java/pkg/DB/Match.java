@@ -70,6 +70,9 @@ public class Match {
 		Logging.getLogger().info("Match object created with id: {}",match_id);
 	}
 	
+	/**
+	 * Creates the match object.
+	 */
 	public Match(){}
 	
 	/**
@@ -81,38 +84,74 @@ public class Match {
 		return filename;
 	}
 
+	/**
+	 * Getter for user id.
+	 * @return match_id
+	 */
 	public int getMatch_id() {
 		return match_id;
 	}
 
+	/**
+	 * Getter for user1's id.
+	 * @return user1
+	 */
 	public int getUser1() {
 		return user1;
 	}
 
+	/**
+	 * Getter for user2's id.
+	 * @return user2
+	 */
 	public int getUser2() {
 		return user2;
 	}
 
+	/**
+	 * Getter for match date.
+	 * @return match_date
+	 */
 	public Date getMatch_date() {
 		return match_date;
 	}
 
+	/**
+	 * Setter for match id.
+	 * @param match_id to set
+	 */
 	public void setMatch_id(int match_id) {
 		this.match_id = match_id;
 	}
 
+	/**
+	 * Setter for user1's id.
+	 * @param user1 id to set
+	 */
 	public void setUser1(int user1) {
 		this.user1 = user1;
 	}
 
+	/**
+	 * Setter for user2's id.
+	 * @param user2 id to set
+	 */
 	public void setUser2(int user2) {
 		this.user2 = user2;
 	}
 
+	/**
+	 * Setter for match date.
+	 * @param match_date to set.
+	 */
 	public void setMatch_date(Date match_date) {
 		this.match_date = match_date;
 	}
 
+	/**
+	 * Setter for file name.
+	 * @param filename to set
+	 */
 	public void setFilename(String filename) {
 		this.filename = filename;
 	}

@@ -11,6 +11,9 @@ import java.util.List;
 import pkg.Player;
 import pkg.util.Logging;
 
+/**
+ * Contains the DAO functions. Suitable for Hibarnate and also for JDBC api.
+ */
 public interface IDbFunctions {
 
 	/**

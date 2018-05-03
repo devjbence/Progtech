@@ -40,7 +40,7 @@ public class GameTest {
 		game2.getBoard().put(2, 0,'O');
 		game2.getBoard().put(3, 0,'O');
 		game2.getBoard().put(4, 0,'O');
-		///////////////////////////////////////////
+		///////////////////////////////////////////tie
 		int count=0;
 		char character='O';
 		
