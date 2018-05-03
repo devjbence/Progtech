@@ -65,6 +65,7 @@ local.properties
 
 ### Maven ###
 target/
+*/target/**
 log/
 matches/
 pom.xml.tag
