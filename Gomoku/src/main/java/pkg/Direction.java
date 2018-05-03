@@ -1,7 +1,7 @@
 package pkg;
 
 /**
- *	Give us a direction in which we can check the board if we won. 
+ *	Give us a direction in which we can check the board if we have won. 
  *
  */
 public enum Direction {
