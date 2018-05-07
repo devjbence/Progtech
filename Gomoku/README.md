@@ -56,7 +56,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Juras Bence** 
+* **Jurás Bence** 
 
 ## License
 
