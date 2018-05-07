@@ -1,4 +1,5 @@
 # GOMOKU
+==========
 
 Gomoku game for two players.
 
