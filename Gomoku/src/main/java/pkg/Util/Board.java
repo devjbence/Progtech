@@ -1,4 +1,4 @@
-package pkg.util;
+package src.main.java.pkg.Util;
 import pkg.util.*;
 
 /**

@@ -1,4 +1,4 @@
-package pkg.util;
+package src.main.java.pkg.Util;
 
 /**
  *	Give us a direction in which we can check the board if we have won. 

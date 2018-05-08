@@ -1,4 +1,4 @@
-package pkg.util;
+package src.main.java.pkg.Util;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
