@@ -1,4 +1,4 @@
-package pkg.util;
+package pkg;
 
 /**
  *	Give us a direction in which we can check the board if we have won. 

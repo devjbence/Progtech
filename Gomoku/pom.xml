@@ -16,7 +16,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<slf4j.version>1.7.25</slf4j.version>
 		<tinylog.version>1.3.4</tinylog.version>
-		<exec.mainClass>pkg.App.Main</exec.mainClass>
+		<exec.mainClass>pkg.Main</exec.mainClass>
 	</properties>
 
 	<dependencies>

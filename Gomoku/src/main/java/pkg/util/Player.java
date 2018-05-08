@@ -1,4 +1,4 @@
-package pkg.util;
+package pkg;
 
 /**
  * Class for wrapping player informations.

@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import pkg.Player;
 import pkg.util.Logging;
-import pkg.util.Player;
 
 /**
  * Contains the DAO functions. Suitable for Hibarnate and also for JDBC api.

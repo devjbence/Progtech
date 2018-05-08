@@ -1,12 +1,12 @@
 package pkg.UI;
 
 import javafx.stage.Stage;
+import pkg.Logic;
+import pkg.Player;
 import pkg.DB.IDbFunctions;
-import pkg.Controller.Logic;
 import pkg.DB.DbFunctionsImpJDBC;
 import pkg.DB.DbFunctionsImplHIB;
 import pkg.util.Logging;
-import pkg.util.Player;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;

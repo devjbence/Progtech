@@ -1,4 +1,4 @@
-package pkg.util;
+package pkg;
 import pkg.util.*;
 
 /**
