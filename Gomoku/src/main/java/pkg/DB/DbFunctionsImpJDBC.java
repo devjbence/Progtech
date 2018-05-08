@@ -10,8 +10,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import pkg.Player;
 import pkg.util.Logging;
+import pkg.util.Player;
 
 /**
  * Class for put or retrieve date from the database.

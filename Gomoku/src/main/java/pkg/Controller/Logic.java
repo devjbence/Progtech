@@ -1,6 +1,9 @@
-package pkg;
+package pkg.Controller;
 
+import pkg.util.Board;
+import pkg.util.Direction;
 import pkg.util.Logging;
+import pkg.util.Player;
 
 /**
  * 
