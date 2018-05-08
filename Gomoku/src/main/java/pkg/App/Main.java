@@ -1,4 +1,4 @@
-package pkg;
+package pkg.App;
 
 import pkg.UI.FXWindow;
 import pkg.util.Logging;
