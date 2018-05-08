@@ -4,7 +4,9 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import pkg.Direction;
+import pkg.Controller.Logic;
+import pkg.util.Direction;
+import pkg.util.Player;
 
 
 public class GameTest {

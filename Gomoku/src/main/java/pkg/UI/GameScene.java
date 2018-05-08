@@ -13,16 +13,16 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
-import pkg.Board;
-import pkg.Logic;
-import pkg.Player;
 import pkg.DB.IDbFunctions;
+import pkg.Controller.Logic;
 import pkg.DB.DbFunctionsImpJDBC;
 import pkg.DB.DbFunctionsImplHIB;
 import pkg.DB.Match;
 import pkg.Files.FileFunctions;
+import pkg.util.Board;
 import pkg.util.Logging;
 import pkg.util.ParsedLine;
+import pkg.util.Player;
 
 /**
  * Creates the game window.

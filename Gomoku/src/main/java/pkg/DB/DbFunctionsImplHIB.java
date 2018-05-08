@@ -12,8 +12,8 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import pkg.Player;
 import pkg.util.Logging;
+import pkg.util.Player;
 
 /**
  * Creates a DAO object using Hibarnate.
