@@ -75,7 +75,15 @@ public class FileFunctions {
 	 */
 	public void saveFile(String filename,char[][]board)
 	{
+			
 			Path path = FileSystems.getDefault().getPath("matches/", filename);
+			
+			if(!Files.exists(path))
+			{
+				File file = new File("matches");
+				file.mkdir();
+			}
+			
 			Charset charset = Charset.forName("US-ASCII");
 			
 			try (BufferedWriter writer = Files.newBufferedWriter(path, charset)) {
