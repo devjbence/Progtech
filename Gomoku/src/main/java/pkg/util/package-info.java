@@ -6,4 +6,4 @@
  * @author ulbrik
  *
  */
-package src.main.java.pkg.Util;
+package pkg.util;

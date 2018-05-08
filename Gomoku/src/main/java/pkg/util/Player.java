@@ -1,4 +1,4 @@
-package src.main.java.pkg.Util;
+package pkg.util;
 
 /**
  * Class for wrapping player informations.

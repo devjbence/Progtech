@@ -1,4 +1,4 @@
-package src.main.java.pkg.Util;
+package pkg.util;
 
 /**
  * Class for containing data, from saved games.
