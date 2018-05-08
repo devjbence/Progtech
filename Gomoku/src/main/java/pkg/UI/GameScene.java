@@ -221,10 +221,8 @@ public class GameScene extends Scenes{
 	 */
 	private void setMatchesForLoad()
 	{
-    	int currPlayerId=dbf.getIdByUsername(player.getUsername());
-    	int othPlayerId=dbf.getIdByUsername(otherPlayer.getUsername());
-    	
-    	matches = dbf.loadMatches(currPlayerId, othPlayerId);
+
+		matches = dbf.loadMatches(user1Id, user2Id);
     	Logging.getLogger().info("{} matches in db", matches.size());
 	}
 	
