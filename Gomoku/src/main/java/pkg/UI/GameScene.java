@@ -30,6 +30,15 @@ import pkg.util.ParsedLine;
 @SuppressWarnings("restriction")
 public class GameScene extends Scenes{
 	
+	
+	/**
+	 * Id of user #1.
+	 */
+	private int user1Id;
+	/**
+	 * Id of user #2.
+	 */
+	private int user2Id;
 	/**
 	 * The main window.
 	 */
@@ -138,6 +147,8 @@ public class GameScene extends Scenes{
 		player= logic.getCurrentPlayer();
 		otherPlayer= logic.getOtherPlayer();
 		this.dbf= dbf;
+    	user1Id= dbf.getIdByUsername(player.getUsername());
+    	user2Id= dbf.getIdByUsername(otherPlayer.getUsername());
 		ff= new FileFunctions();
 		overOnce=false;
 		Logging.getLogger().info("GameScene object created");
@@ -193,9 +204,7 @@ public class GameScene extends Scenes{
 	private void save()
 	{
      	int id=dbf.getNextMatchId();
-    	int user1= dbf.getIdByUsername(player.getUsername());
-    	int user2= dbf.getIdByUsername(otherPlayer.getUsername());
-    	int[] srt= new int[]{user1,user2};
+    	int[] srt= new int[]{user1Id,user2Id};
     	Arrays.sort(srt);
     	
     	Date match_date = new Date(System.currentTimeMillis());
