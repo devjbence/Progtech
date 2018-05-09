@@ -60,7 +60,7 @@ mvn exec:java
 
 ## License
 
-This project is licensed under the pache License 2.0 - see the [LICENSE.txt](LICENSE.txt) file for details
+This project is licensed under the Apache License 2.0 - see the [LICENSE.txt](LICENSE.txt) file for details
 
 ## Acknowledgments
 
