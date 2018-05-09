@@ -38,7 +38,7 @@ public class Connector {
 		}
 		try {
 			connection = 
-			DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","benccee","saapkaa");
+			DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","admin","admin");
 		} catch (SQLException e) {
 			Logging.getLogger().error(e.getSQLState());
 		}
