@@ -56,7 +56,7 @@ mvn exec:java
 
 ## Authors
 
-* ** Bence Jurás ** 
+ ** Bence Jurás ** 
 
 ## License
 
