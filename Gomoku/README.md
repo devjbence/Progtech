@@ -47,12 +47,12 @@ mvn exec:java
 ```
 
 ## Built With
-
+* [Java JPA] (http://www.oracle.com/technetwork/java/javaee/tech/persistence-jsp-140049.html)
+* [JAVA FX] (https://docs.oracle.com/javafx/2/overview/jfxpub-overview.htm)
 * [Maven](https://maven.apache.org/) - Dependency Management
+* [Hibernate] (http://http://hibernate.org)
+* [Oracle Database Express Edition 11g] (http://www.oracle.com/technetwork/database/database-technologies/express-edition/downloads/index.html)
 
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
 ## Authors
 
