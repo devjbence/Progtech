@@ -20,13 +20,13 @@ After the installation you will need to need to download and set the JDK
 sdk install java 8u161-oracle
 ```
 
-#Clone the project
+Clone the project
 
 ```
 git clone https://github.com/devjbence/Progtech.git
 
 ```
-
+Go to it's directory
 ```
 cd Progtech/Gomoku
 ```
