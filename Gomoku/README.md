@@ -56,7 +56,7 @@ mvn exec:java
 
 ## Authors
 
-* **Jurás Bence** 
+* ** Bence Jurás ** 
 
 ## License
 
@@ -64,7 +64,7 @@ This project is licensed under the pache License 2.0 - see the [LICENSE.txt](LIC
 
 ## Acknowledgments
 
-* Balla Tibor
-* Jeszenszky Peter
-* Udemy
+* Tibor Balla
+* Péter Jeszenszky
+* Udemy.com
 
