@@ -265,6 +265,21 @@ public class GameScene extends Scenes{
 	}
 	
 	/**
+	 * Colors the winner fields. 
+	 * @param winnerFields ["x;y"]
+	 */
+	private void colorWinnerFields(String winnerFields[])
+	{
+		for(int i=0;i<winnerFields.length;i++)
+		{
+			String fieldLine[]= winnerFields[i].split(";");
+			int x=Integer.parseInt(fieldLine[0]);
+			int y=Integer.parseInt(fieldLine[1]);
+			fields[x][y].setId("winnerField");
+		}
+	}
+	
+	/**
 	 * Open up a window, displaying the name of the winner.
 	 * @param xOrO for determining who won.
 	 */
@@ -272,9 +287,11 @@ public class GameScene extends Scenes{
 	{
 		if(player.getOldXorO()=='X')
 		{
+			colorWinnerFields(logic.getWinFields());
 			FinishWindow.finishBox("!! "+player.getUsername()+" won !!");
 		}
 		else{
+			colorWinnerFields(logic.getWinFields());
 			FinishWindow.finishBox("!! "+player.getUsername()+" won !!");
 		}
 		overOnce=true;

@@ -42,7 +42,9 @@
     -fx-font: 25 "Times New Roman";
 }
 
-
+#winnerField{
+	-fx-background-color:#e63900;
+}
 
 
 
