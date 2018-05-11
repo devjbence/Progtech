@@ -1,19 +1,14 @@
 package pkg.DB;
 
-import java.sql.Date;
-import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
-
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.sun.media.jfxmedia.logging.Logger;
-
 import pkg.Files.FileFunctions;
 import pkg.util.Logging;
 import pkg.util.Player;
 
+/**
+ *  Save users and matches to a JSON.
+ */
 public class DbFunctionsImpJSON implements IDbFunctions {
 
 	/**
@@ -175,19 +170,5 @@ public class DbFunctionsImpJSON implements IDbFunctions {
 
 		ff.JSONsaveUser(user);
 	}
-
-	/*
-	public static void main(String[] args) {
-
-		DbFunctionsImpJSON dbf = new DbFunctionsImpJSON();
-		//dbf.saveUser(10, "a", "a");
-
-		//dbf.login("a", "a", 'O');
-		//dbf.saveMatch(122, 12, 21, Date.valueOf(LocalDate.now()), "no.fil2e");
-		
-		List<User> users=new ArrayList<User>();
-		System.out.println(users.size());
-		System.out.println("over");
-	}*/
 
 }

@@ -176,8 +176,8 @@ public class FileFunctions {
 	}
 	
 	/**
-	 * Loads the users in from the JSON/Users.json file.
-	 * @return List<User>
+	 * Loads the users in from the JSON slash Users dot json file.
+	 * @return {@code List<User>}
 	 */
 	public List<User> JSONloadUsers()
 	{
@@ -202,8 +202,8 @@ public class FileFunctions {
 	}
 	
 	/**
-	 * Loads the matches in from the JSON/Matches.json file.
-	 * @return List<Match>
+	 * Loads the matches in from the JSON slash Matches dot json file.
+	 * @return {@code List<Match>}
 	 */
 	public List<Match> JSONloadMatches()
 	{
@@ -235,10 +235,11 @@ public class FileFunctions {
 	
 	
 	/**
-	 * Saves a given user to the Users.json file.
-	 * @param user to save
+	 * Saves a given user to the Users dot json file.
+	 * 
+	 * @param user to save.
 	 */
-	public void JSONsaveUser(User user ) 
+	public void JSONsaveUser(User user) 
 	{
 		Path path = FileSystems.getDefault().getPath("JSON/", "Users.json");
 		
@@ -265,8 +266,8 @@ public class FileFunctions {
 	
 	
 	/**
-	 * Saves a given match to the Users.json file.
-	 * @param user to save
+	 * Saves a given match to the Users dot json file.
+	 * @param match to save
 	 */
 	public void JSONsaveMatch(Match match ) 
 	{
