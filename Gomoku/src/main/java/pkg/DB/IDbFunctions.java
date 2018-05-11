@@ -39,13 +39,11 @@ public interface IDbFunctions {
 	 *            id of user1
 	 * @param user2
 	 *            id of user2
-	 * @param date
-	 *            the date
 	 * @param filename
 	 *            this will be the name of the file, that stores the current
 	 *            game state.
 	 */
-	public void saveMatch(int match_id, int user1, int user2, Date date, String filename);
+	public void saveMatch(int match_id, int user1, int user2, String filename);
 
 	/**
 	 * Check if there is any saved game. If there is/are, then the user can

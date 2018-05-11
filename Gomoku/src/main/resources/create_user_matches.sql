@@ -11,7 +11,6 @@ CREATE TABLE matches (
 	match_id int NOT NULL ,
 	user1 int NOT NULL,
 	user2 int NOT NULL,
-	match_date DATE NOT NULL,
 	file_name varchar2(100) NOT NULL,
 	PRIMARY KEY (match_id)
 );

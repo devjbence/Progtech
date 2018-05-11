@@ -1,7 +1,5 @@
 package pkg.DB;
 
-import java.sql.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,8 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 import pkg.util.Logging;
 
@@ -40,12 +36,6 @@ public class Match {
 	@Column(name = "USER2")
 	private int user2;
 	/**
-	 * Date of the match.
-	 */
-	@Temporal(TemporalType.DATE)
-	@Column(name = "MATCH_DATE")
-	private Date match_date;
-	/**
 	 * Name of the file.
 	 */
 	@Column(name = "FILE_NAME")
@@ -57,15 +47,13 @@ public class Match {
 	 * @param match_id stores the unique identification of the match
 	 * @param user1 stores the unique identification of user1
 	 * @param user2 stores the unique identification of user2
-	 * @param match_date stores the date of the match
 	 * @param filename stores the name of the file, where the we saved
 	 */
-	public Match(int match_id, int user1, int user2, Date match_date, String filename) {
+	public Match(int match_id, int user1, int user2,  String filename) {
 		
 		this.match_id = match_id;
 		this.user1 = user1;
 		this.user2 = user2;
-		this.match_date = match_date;
 		this.filename = filename;
 		Logging.getLogger().info("Match object created with id: {}",match_id);
 	}
@@ -109,14 +97,6 @@ public class Match {
 	}
 
 	/**
-	 * Getter for match date.
-	 * @return match_date
-	 */
-	public Date getMatch_date() {
-		return match_date;
-	}
-
-	/**
 	 * Setter for match id.
 	 * @param match_id to set
 	 */
@@ -138,14 +118,6 @@ public class Match {
 	 */
 	public void setUser2(int user2) {
 		this.user2 = user2;
-	}
-
-	/**
-	 * Setter for match date.
-	 * @param match_date to set.
-	 */
-	public void setMatch_date(Date match_date) {
-		this.match_date = match_date;
 	}
 
 	/**

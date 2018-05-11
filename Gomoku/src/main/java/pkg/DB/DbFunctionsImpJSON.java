@@ -41,7 +41,7 @@ public class DbFunctionsImpJSON implements IDbFunctions {
 	}
 
 	@Override
-	public void saveMatch(int match_id, int user1, int user2, Date date, String filename) {
+	public void saveMatch(int match_id, int user1, int user2,  String filename) {
 		
 		match_id= getNextMatchId();
 		
@@ -50,7 +50,6 @@ public class DbFunctionsImpJSON implements IDbFunctions {
 		match.setMatch_id(match_id);
 		match.setUser1(user1);
 		match.setUser2(user2);
-		match.setMatch_date(date);
 		match.setFilename(filename);
 		
 		ff.JSONsaveMatch(match);

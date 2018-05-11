@@ -45,7 +45,7 @@ public class DbFunctionsImplHIB implements IDbFunctions{
 	}
 	
 	@Override
-	public void saveMatch(int match_id,int user1,int user2,Date date,String filename)
+	public void saveMatch(int match_id,int user1,int user2,String filename)
 	{
 		try {
 			session= ConnectorEM.getSessionFactory().openSession();
@@ -56,7 +56,6 @@ public class DbFunctionsImplHIB implements IDbFunctions{
 			
 			match.setUser1(user1);
 			match.setUser2(user2);
-			match.setMatch_date(date);
 			match.setFilename(filename);
 
 			session.save(match);

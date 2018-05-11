@@ -1,7 +1,6 @@
 package pkg.DB;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -59,17 +58,16 @@ public class DbFunctionsImpJDBC implements IDbFunctions{
 	}
 	
 		@Override
-		public void saveMatch(int match_id,int user1,int user2,Date date,String filename)
+		public void saveMatch(int match_id,int user1,int user2,String filename)
 		{
-			match=new Match(match_id, user1, user2, date, filename);
+			match=new Match(match_id, user1, user2, filename);
 		
 			try {
 				PreparedStatement ps= connection.prepareStatement("INSERT INTO matches values(?,?,?,?,?)");
 				ps.setInt(1, match_id);
 				ps.setInt(2, user1);
 				ps.setInt(3, user2);
-				ps.setDate(4, date);
-				ps.setString(5, filename);
+				ps.setString(4, filename);
 				
 				int n= ps.executeUpdate();
 				
@@ -99,8 +97,7 @@ public class DbFunctionsImpJDBC implements IDbFunctions{
 				while(rs.next())
 				{
 					matches.add(new Match(
-							rs.getInt(1),rs.getInt(2),rs.getInt(3),rs.getDate(4),
-							rs.getString(5)
+							rs.getInt(1),rs.getInt(2),rs.getInt(3),rs.getString(4)
 							));
 				}
 				

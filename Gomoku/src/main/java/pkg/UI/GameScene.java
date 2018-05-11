@@ -207,11 +207,10 @@ public class GameScene extends Scenes{
     	int[] srt= new int[]{user1Id,user2Id};
     	Arrays.sort(srt);
     	
-    	Date match_date = new Date(System.currentTimeMillis());
     	String filename=id+"_"+srt[0]+"_"+srt[1];
     	
     	ff.saveFile(filename, board.getBoard());
-        dbf.saveMatch(id, srt[0], srt[1], match_date, filename);
+        dbf.saveMatch(id, srt[0], srt[1], filename);
     	
     	Logging.getLogger().info("Gamestate saved into db and into {}", filename);
 	}

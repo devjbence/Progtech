@@ -169,8 +169,8 @@ public class AuthenticationScene extends Scenes{
 		try {
 			
 			this.start(primaryStage);
-			dbf= new DbFunctionsImpJDBC();
-			//dbf = new DbFunctionsImplHIB();
+			//dbf= new DbFunctionsImpJDBC();
+			dbf = new DbFunctionsImplHIB();
 			//dbf = new DbFunctionsImpJSON();
 			
 		} catch (Exception e) {

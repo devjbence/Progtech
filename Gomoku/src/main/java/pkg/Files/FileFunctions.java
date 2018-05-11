@@ -208,14 +208,6 @@ public class FileFunctions {
 	public List<Match> JSONloadMatches()
 	{
 		GsonBuilder builder = new GsonBuilder(); 
-
-		// Register an adapter to manage the date types as long values 
-		builder.registerTypeAdapter(java.sql.Date.class, new JsonDeserializer<Date>() { 
-		   public java.sql.Date deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
-		      return (java.sql.Date) new Date(json.getAsJsonPrimitive().getAsLong()); 
-		   } 
-		});
-
 		Gson gson = builder.create();
 		
 		Type listType = new TypeToken<ArrayList<Match>>(){}.getType();
@@ -227,7 +219,6 @@ public class FileFunctions {
 			
 			if(matches == null)
 			{
-				System.out.println("its empty");
 				matches = new ArrayList<Match>();
 			}
 			
@@ -296,13 +287,6 @@ public class FileFunctions {
 		try(Writer writer= new FileWriter("JSON/Matches.json"))
 		{
 			Gson gson = new GsonBuilder()
-			        .registerTypeAdapter(java.sql.Date.class, (JsonDeserializer<java.sql.Date>)
-			        		(json, typeOfT, context) ->{
-			        			long l = json.getAsJsonPrimitive().getAsLong();
-			        			return (java.sql.Date) new Date(l);
-			        			
-			        		})
-			        .registerTypeAdapter(java.sql.Date.class, (JsonSerializer<java.sql.Date>) (date, type, jsonSerializationContext) -> new JsonPrimitive(date.getTime()))
 			        .create();
 			gson.toJson(matches,writer);
 			
