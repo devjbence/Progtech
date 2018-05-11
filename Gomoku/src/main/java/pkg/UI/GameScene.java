@@ -232,7 +232,6 @@ public class GameScene extends Scenes{
 	 */
 	public void load(String filename)
 	{
-		System.out.println("load");
     	overOnce=false;
     	
     	List<ParsedLine> pl= ff.loadFile(filename);
@@ -324,7 +323,6 @@ public class GameScene extends Scenes{
 	    
 		if(logic.checkTie())
 		{
-			System.out.println("its a tie!");
 			FinishWindow.finishBox("!! It is a tie !!");
 			overOnce=true;
 			weCanAlterIt=false;
@@ -334,7 +332,6 @@ public class GameScene extends Scenes{
 		if(whichWin==1)
 		{
 			if(!overOnce)
-				System.out.println("x won!!!!!!");
 				won('X');
 				weCanAlterIt=false;
 				Logging.getLogger().info("X won");
@@ -343,7 +340,6 @@ public class GameScene extends Scenes{
 		if(whichWin==2)
 		{
 			if(!overOnce)
-				System.out.println("o won!!!!!!");
 				won('O');
 				weCanAlterIt=false;
 				Logging.getLogger().info("O won");
@@ -422,7 +418,6 @@ public class GameScene extends Scenes{
         primaryStage.setTitle("GOMOKU");
         
         primaryStage.setOnCloseRequest(e->{
-    	System.out.println("closing..");
     	dbf.closeConnection();
     	Logging.getLogger().info("GameScene closed");
         });

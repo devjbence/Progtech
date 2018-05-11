@@ -206,8 +206,8 @@ public class AuthenticationScene extends Scenes{
 		gpane4Au4.setPadding(new Insets(10,10,10,10));
 		gpane4Au4.setHgap(10);
 		
-		 pl1= new Label("Player #1");
-		 pl2= new Label("Player #2");
+		 pl1= new Label("Player #1 - "+(char)10006);
+		 pl2= new Label("Player #2 - "+(char)9679);
 		 uname1= new Label("Username: ");
 		 passw1= new Label("Password: ");
 		 uname2= new Label("Username: ");

@@ -2,6 +2,7 @@ package pkg.DB;
 
 import java.sql.Date;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -83,7 +84,7 @@ public class DbFunctionsImpJSON implements IDbFunctions {
 	public int getNextMatchId() {
 		
 		List<Match> matches = ff.JSONloadMatches();
-
+		
 		int id = matches.stream().map(x->x.getMatch_id())
 				.sorted( (x,y)->  y.compareTo(x) ).findFirst().orElse(0);
 		
@@ -182,9 +183,11 @@ public class DbFunctionsImpJSON implements IDbFunctions {
 		DbFunctionsImpJSON dbf = new DbFunctionsImpJSON();
 		//dbf.saveUser(10, "a", "a");
 
-		dbf.login("a", "a", 'O');
+		//dbf.login("a", "a", 'O');
 		//dbf.saveMatch(122, 12, 21, Date.valueOf(LocalDate.now()), "no.fil2e");
 		
+		List<User> users=new ArrayList<User>();
+		System.out.println(users.size());
 		System.out.println("over");
 	}*/
 

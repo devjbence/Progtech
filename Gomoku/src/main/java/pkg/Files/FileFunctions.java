@@ -4,13 +4,21 @@ import java.nio.charset.Charset;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonIOException;
+import com.google.gson.JsonParseException;
+import com.google.gson.JsonPrimitive;
+import com.google.gson.JsonSerializationContext;
+import com.google.gson.JsonSerializer;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
@@ -199,14 +207,29 @@ public class FileFunctions {
 	 */
 	public List<Match> JSONloadMatches()
 	{
+		GsonBuilder builder = new GsonBuilder(); 
+
+		// Register an adapter to manage the date types as long values 
+		builder.registerTypeAdapter(java.sql.Date.class, new JsonDeserializer<Date>() { 
+		   public java.sql.Date deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
+		      return (java.sql.Date) new Date(json.getAsJsonPrimitive().getAsLong()); 
+		   } 
+		});
+
+		Gson gson = builder.create();
 		
-		Gson gson = new Gson();
 		Type listType = new TypeToken<ArrayList<Match>>(){}.getType();
 		
 		List<Match> matches = new ArrayList<Match>();
 		
 		try {
 			matches = gson.fromJson(new FileReader("JSON/Matches.json"), listType);
+			
+			if(matches == null)
+			{
+				System.out.println("its empty");
+				matches = new ArrayList<Match>();
+			}
 			
 		} catch (JsonIOException | JsonSyntaxException | FileNotFoundException e) {
 			
@@ -272,8 +295,17 @@ public class FileFunctions {
 		
 		try(Writer writer= new FileWriter("JSON/Matches.json"))
 		{
-			Gson gson = new GsonBuilder().create();
+			Gson gson = new GsonBuilder()
+			        .registerTypeAdapter(java.sql.Date.class, (JsonDeserializer<java.sql.Date>)
+			        		(json, typeOfT, context) ->{
+			        			long l = json.getAsJsonPrimitive().getAsLong();
+			        			return (java.sql.Date) new Date(l);
+			        			
+			        		})
+			        .registerTypeAdapter(java.sql.Date.class, (JsonSerializer<java.sql.Date>) (date, type, jsonSerializationContext) -> new JsonPrimitive(date.getTime()))
+			        .create();
 			gson.toJson(matches,writer);
+			
 		} catch (IOException e) {
 			Logging.getLogger().error("Erron with saving to Matches.json. Error message: {}",e.getMessage());
 		}
