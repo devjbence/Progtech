@@ -1,5 +1,4 @@
 package pkg.util;
-import pkg.util.*;
 
 /**
  * The main purpose of the class, is to have a board, so that we can test the logic, and for JavaFX window for showing the game.
