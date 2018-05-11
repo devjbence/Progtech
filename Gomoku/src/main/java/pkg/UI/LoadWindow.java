@@ -1,17 +1,12 @@
 package pkg.UI;
 
-import java.awt.Insets;
 import java.util.List;
-import java.util.Observable;
 import java.util.stream.Collectors;
-
-import javafx.geometry.*;
 import javafx.scene.*;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.stage.*;
 import pkg.DB.Match;
-import pkg.Files.FileFunctions;
 import pkg.util.Logging;
 import javafx.collections.ObservableList;
 import javafx.collections.FXCollections;
@@ -19,7 +14,6 @@ import javafx.collections.FXCollections;
 /**
  * Creates the LoadWindow.
  */
-@SuppressWarnings("restriction")
 public abstract class LoadWindow 
 {
 

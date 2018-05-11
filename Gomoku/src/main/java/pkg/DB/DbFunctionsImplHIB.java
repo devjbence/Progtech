@@ -1,9 +1,5 @@
 package pkg.DB;
 
-import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -107,6 +103,7 @@ public class DbFunctionsImplHIB implements IDbFunctions{
 			Query query= session.createQuery("select u from User u where u.name = ?");
 			query.setParameter(0, username);
 			
+			@SuppressWarnings("unchecked")
 			User user=  (User) query.list().stream().findFirst().orElse(null);
 			if(user != null)
 			{
@@ -133,6 +130,7 @@ public class DbFunctionsImplHIB implements IDbFunctions{
 			Query query= session.createQuery("select u from User u where u.user_id = ?");
 			query.setParameter(0, user_id);
 			
+			@SuppressWarnings("unchecked")
 			User user=  (User) query.list().stream().findFirst().orElse(null);
 			if(user != null)
 			{
@@ -160,6 +158,7 @@ public class DbFunctionsImplHIB implements IDbFunctions{
 			query.setParameter(0, username);
 			query.setParameter(1, passw);
 			
+			@SuppressWarnings("unchecked")
 			User user=  (User) query.list().stream().findFirst().orElse(null);
 			if(user != null)
 			{
