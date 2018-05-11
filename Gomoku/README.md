@@ -36,7 +36,7 @@ cd Progtech/Gomoku
 Install the ojdbc6:
 
 ```
-mvn install:install-file -Dfile=src/main/resources/ojdbc6.jar -DgroupId=com.oracle -DartifactId=ojdbc6 -Dversion=11.2.0 -Dpackaging=jar
+mvn install:install-file -Dfile=src/main/resources/ojdbc6.jar -DgroupId=com.oracle -DartifactId=ojdbc6 -Dversion=11.2.0.3 -Dpackaging=jar
 ```
 
 Install the package to the local repo:
