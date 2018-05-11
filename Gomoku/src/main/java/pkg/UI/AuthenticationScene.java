@@ -4,6 +4,7 @@ import javafx.stage.Stage;
 import pkg.DB.IDbFunctions;
 import pkg.Controller.Logic;
 import pkg.DB.DbFunctionsImpJDBC;
+import pkg.DB.DbFunctionsImpJSON;
 import pkg.DB.DbFunctionsImplHIB;
 import pkg.util.Logging;
 import pkg.util.Player;
@@ -169,7 +170,8 @@ public class AuthenticationScene extends Scenes{
 			
 			this.start(primaryStage);
 			//dbf= new DbFunctionsImpJDBC();
-			dbf = new DbFunctionsImplHIB();
+			//dbf = new DbFunctionsImplHIB();
+			dbf = new DbFunctionsImpJSON();
 			
 		} catch (Exception e) {
 			Logging.getLogger().error(e.getMessage());

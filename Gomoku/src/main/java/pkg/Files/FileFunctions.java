@@ -6,8 +6,17 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonIOException;
+import com.google.gson.JsonSyntaxException;
+import com.google.gson.reflect.TypeToken;
+import java.lang.reflect.Type;
 
 import pkg.DB.Match;
+import pkg.DB.User;
 import pkg.util.Logging;
 import pkg.util.ParsedLine;
 
@@ -157,5 +166,118 @@ public class FileFunctions {
 		Logging.getLogger().info("Game state lines stored in List<ParsedLine>");
 		return plines;
 	}
+	
+	/**
+	 * Loads the users in from the JSON/Users.json file.
+	 * @return List<User>
+	 */
+	public List<User> JSONloadUsers()
+	{
+		
+		Gson gson = new Gson();
+		Type listType = new TypeToken<ArrayList<User>>(){}.getType();
+		
+		List<User> users = new ArrayList<User>();
+		
+		try {
+			users = gson.fromJson(new FileReader("JSON/Users.json"), listType);
+			
+		} catch (JsonIOException | JsonSyntaxException | FileNotFoundException e) {
+			
+			Logging.getLogger().error("Error on parsing the Users.json file into List<User>. Error message: {}"
+					,e.getMessage());
+		}
+		
+		Logging.getLogger().info("Loaded {} users.",users.size());
+		
+		return users;
+	}
+	
+	/**
+	 * Loads the matches in from the JSON/Matches.json file.
+	 * @return List<Match>
+	 */
+	public List<Match> JSONloadMatches()
+	{
+		
+		Gson gson = new Gson();
+		Type listType = new TypeToken<ArrayList<Match>>(){}.getType();
+		
+		List<Match> matches = new ArrayList<Match>();
+		
+		try {
+			matches = gson.fromJson(new FileReader("JSON/Matches.json"), listType);
+			
+		} catch (JsonIOException | JsonSyntaxException | FileNotFoundException e) {
+			
+			Logging.getLogger().error("Error on parsing the Matches.json file into List<Match>. Error message: {}"
+					,e.getCause());
+		}
+		
+		Logging.getLogger().info("Loaded {} matches.",matches.size());
+		
+		return matches;
+	}
+	
+	
+	/**
+	 * Saves a given user to the Users.json file.
+	 * @param user to save
+	 */
+	public void JSONsaveUser(User user ) 
+	{
+		Path path = FileSystems.getDefault().getPath("JSON/", "Users.json");
+		
+		if(!Files.exists(path))
+		{
+			File file = new File("JSON");
+			file.mkdir();
+		}
+		
+		List<User> users = JSONloadUsers();
+		users.add(user);
+		
+		users=users.stream().sorted((x,y)-> ((Integer)x.getUser_id()).compareTo(y.getUser_id()) ).
+		collect(Collectors.toList());
+		
+		try(Writer writer= new FileWriter("JSON/Users.json"))
+		{
+			Gson gson = new GsonBuilder().create();
+			gson.toJson(users,writer);
+		} catch (IOException e) {
+			Logging.getLogger().error("Erron with saving to Users.json. Error message: {}",e.getMessage());
+		}
+	}
+	
+	
+	/**
+	 * Saves a given match to the Users.json file.
+	 * @param user to save
+	 */
+	public void JSONsaveMatch(Match match ) 
+	{
+		Path path = FileSystems.getDefault().getPath("JSON/", "Matches.json");
+		
+		if(!Files.exists(path))
+		{
+			File file = new File("JSON");
+			file.mkdir();
+		}
+		
+		List<Match> matches = JSONloadMatches();
+		matches.add(match);
+		
+		matches=matches.stream().sorted((x,y)-> ((Integer)x.getMatch_id()).compareTo(y.getMatch_id()) ).
+		collect(Collectors.toList());
+		
+		try(Writer writer= new FileWriter("JSON/Matches.json"))
+		{
+			Gson gson = new GsonBuilder().create();
+			gson.toJson(matches,writer);
+		} catch (IOException e) {
+			Logging.getLogger().error("Erron with saving to Matches.json. Error message: {}",e.getMessage());
+		}
+	}
+	
 
 }

@@ -249,6 +249,18 @@ public class DbFunctionsImpJDBC implements IDbFunctions{
 			Logging.getLogger().warn("User already in database, no need for signing up.");
 			return null;
 		}
+
+		@Override
+		public int getNextUserId() {
+			// TODO Auto-generated method stub
+			return 0;
+		}
+
+		@Override
+		public void saveUser(int user_id, String username, String passw) {
+			// TODO Auto-generated method stub
+			
+		}
 		
 }
 

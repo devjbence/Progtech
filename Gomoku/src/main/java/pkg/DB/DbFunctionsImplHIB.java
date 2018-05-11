@@ -16,7 +16,7 @@ import pkg.util.Logging;
 import pkg.util.Player;
 
 /**
- * Creates a DAO object using Hibarnate.
+ * Creates a DAO object using Hibernate.
  */
 public class DbFunctionsImplHIB implements IDbFunctions{
 
@@ -238,6 +238,18 @@ public class DbFunctionsImplHIB implements IDbFunctions{
 		
 		Logging.getLogger().warn("No match id");
 		return 10;
+	}
+
+	@Override
+	public int getNextUserId() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void saveUser(int user_id, String username, String passw) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }
