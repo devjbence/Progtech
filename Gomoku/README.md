@@ -58,12 +58,12 @@ mvn exec:java
 ```
 
 ## Built With
-* [Java JPA] (http://www.oracle.com/technetwork/java/javaee/tech/persistence-jsp-140049.html)
-* [JAVA FX] (https://docs.oracle.com/javafx/2/overview/jfxpub-overview.htm)
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [Hibernate] (http://http://hibernate.org)
-* [GSON] (https://github.com/google/gson)
-* [Oracle Database Express Edition 11g] (http://www.oracle.com/technetwork/database/database-technologies/express-edition/downloads/index.html)
+* [ Java JPA ] (http://www.oracle.com/technetwork/java/javaee/tech/persistence-jsp-140049.html)
+* [ JAVA FX ] (https://docs.oracle.com/javafx/2/overview/jfxpub-overview.htm)
+* [ Maven ](https://maven.apache.org/) - Dependency Management
+* [ Hibernate ] (http://http://hibernate.org)
+* [ GSON ] (https://github.com/google/gson)
+* [ Oracle Database Express Edition 11g ] (http://www.oracle.com/technetwork/database/database-technologies/express-edition/downloads/index.html)
 
 
 ## Authors
