@@ -385,6 +385,7 @@ public class GameScene extends Scenes{
         		{
         			fields[i][j].setText(" ");
         			fields[i][j].setId("");
+        			overOnce=false;
         		}
         	}
         	Logging.getLogger().info("New Game clicked");
