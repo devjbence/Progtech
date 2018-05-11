@@ -63,7 +63,7 @@ public class DbFunctionsImpJDBC implements IDbFunctions{
 			match=new Match(match_id, user1, user2, filename);
 		
 			try {
-				PreparedStatement ps= connection.prepareStatement("INSERT INTO matches values(?,?,?,?,?)");
+				PreparedStatement ps= connection.prepareStatement("INSERT INTO matches values(?,?,?,?)");
 				ps.setInt(1, match_id);
 				ps.setInt(2, user1);
 				ps.setInt(3, user2);
