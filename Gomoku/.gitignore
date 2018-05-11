@@ -130,6 +130,7 @@ fabric.properties
 ### Maven ###
 target/
 log/
+JSON/
 matches/
 pom.xml.tag
 pom.xml.releaseBackup
