@@ -11,6 +11,13 @@
 		<name>Informatika Kar</name>
 	</organization>
 
+	<scm>
+		<connection>scm:git://github.com/devjbence/Progtech/Gomoku.git</connection>
+		<developerConnection>scm:git:git@github.com/devjbence/Progtech/Gomoku.git</developerConnection>
+		<tag>Gomoku</tag>
+		<url>https://github.com/devjbence/Progtech/Gomoku</url>
+	</scm>
+
 	<licenses>
 		<license>
 			<name>Apache License, Version 2.0</name>
