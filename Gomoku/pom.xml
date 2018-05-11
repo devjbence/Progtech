@@ -172,32 +172,6 @@
 				</executions>
 			</plugin>
 
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-enforcer-plugin</artifactId>
-				<version>3.0.0-M1</version>
-				<executions>
-					<execution>
-						<goals>
-							<goal>enforce</goal>
-						</goals>
-						<configuration>
-							<rules>
-								<requireJavaVersion>
-									<version>[1.8,)</version>
-									<message>JDK 8 or later is required!</message>
-								</requireJavaVersion>
-								<requireProperty>
-									<property>java.vendor</property>
-									<regex>^Oracle Corporation$</regex>
-									<regexMessage>An Oracle JDK is required!</regexMessage>
-								</requireProperty>
-							</rules>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
 		</plugins>
 	</build>
 
