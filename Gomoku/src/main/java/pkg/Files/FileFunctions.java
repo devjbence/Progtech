@@ -95,10 +95,10 @@ public class FileFunctions {
 	 */
 	public void saveFile(String filename, char[][] board) {
 
-		Path path = FileSystems.getDefault().getPath("matches/", filename);
+		Path path = FileSystems.getDefault().getPath("target/matches/", filename);
 
 		if (!Files.exists(path)) {
-			File file = new File("matches");
+			File file = new File("target/matches");
 			file.mkdir();
 		}
 
@@ -154,7 +154,7 @@ public class FileFunctions {
 	public List<ParsedLine> loadFile(String filename) {
 		List<ParsedLine> plines = new ArrayList<ParsedLine>();
 		Charset charset = Charset.forName("US-ASCII");
-		Path path = FileSystems.getDefault().getPath("matches/", filename);
+		Path path = FileSystems.getDefault().getPath("target/matches/", filename);
 
 		try (BufferedReader reader = Files.newBufferedReader(path, charset)) {
 			String line = null;
@@ -183,9 +183,9 @@ public class FileFunctions {
 
 		List<User> users = new ArrayList<User>();
 
-		if (new File("JSON/Users.json").isFile()) {
+		if (new File("target/JSON/Users.json").isFile()) {
 			try {
-				users = gson.fromJson(new FileReader("JSON/Users.json"), listType);
+				users = gson.fromJson(new FileReader("target/JSON/Users.json"), listType);
 				Logging.getLogger().info("Loaded {} users.", users.size());
 
 			} catch (JsonIOException | JsonSyntaxException | FileNotFoundException e) {
@@ -217,9 +217,9 @@ public class FileFunctions {
 
 		List<Match> matches = new ArrayList<Match>();
 
-		if (new File("JSON/Matches.json").isFile()) {
+		if (new File("target/JSON/Matches.json").isFile()) {
 			try {
-				matches = gson.fromJson(new FileReader("JSON/Matches.json"), listType);
+				matches = gson.fromJson(new FileReader("target/JSON/Matches.json"), listType);
 				Logging.getLogger().info("Loaded {} matches.", matches.size());
 
 			} catch (JsonIOException | JsonSyntaxException | FileNotFoundException e) {
@@ -243,10 +243,10 @@ public class FileFunctions {
 	 *            to save.
 	 */
 	public void JSONsaveUser(User user) {
-		Path path = FileSystems.getDefault().getPath("JSON/", "Users.json");
+		Path path = FileSystems.getDefault().getPath("target/JSON/", "Users.json");
 
 		if (!Files.exists(path)) {
-			File file = new File("JSON");
+			File file = new File("target/JSON");
 			file.mkdir();
 		}
 
@@ -256,7 +256,7 @@ public class FileFunctions {
 		users = users.stream().sorted((x, y) -> ((Integer) x.getUser_id()).compareTo(y.getUser_id()))
 				.collect(Collectors.toList());
 
-		try (Writer writer = new FileWriter("JSON/Users.json")) {
+		try (Writer writer = new FileWriter("target/JSON/Users.json")) {
 			Gson gson = new GsonBuilder().create();
 			gson.toJson(users, writer);
 		} catch (IOException e) {
@@ -271,10 +271,10 @@ public class FileFunctions {
 	 *            to save
 	 */
 	public void JSONsaveMatch(Match match) {
-		Path path = FileSystems.getDefault().getPath("JSON/", "Matches.json");
+		Path path = FileSystems.getDefault().getPath("target/JSON/", "Matches.json");
 
 		if (!Files.exists(path)) {
-			File file = new File("JSON");
+			File file = new File("target/JSON");
 			file.mkdir();
 		}
 
@@ -284,7 +284,7 @@ public class FileFunctions {
 		matches = matches.stream().sorted((x, y) -> ((Integer) x.getMatch_id()).compareTo(y.getMatch_id()))
 				.collect(Collectors.toList());
 
-		try (Writer writer = new FileWriter("JSON/Matches.json")) {
+		try (Writer writer = new FileWriter("target/JSON/Matches.json")) {
 			Gson gson = new GsonBuilder().create();
 			gson.toJson(matches, writer);
 
