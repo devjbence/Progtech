@@ -128,12 +128,10 @@ public class FileFunctions {
 	public List<String> AboutString() {
 		List<String> lines = new ArrayList<String>();
 
-		Path path = FileSystems.getDefault().getPath("other_stuff/", about);
-		Charset charset = Charset.forName("US-ASCII");
-
 		StringBuilder sb = new StringBuilder();
-
-		try (BufferedReader reader = Files.newBufferedReader(path, charset)) {
+		
+		//try (BufferedReader reader = Files.newBufferedReader(path, charset)) {
+		try (BufferedReader reader = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("/"+about)))  ) {
 			String line = null;
 			while ((line = reader.readLine()) != null) {
 				lines.add(line);
