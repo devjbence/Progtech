@@ -168,7 +168,7 @@
 								<transformer
 									implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
 									<mainClass>
-										pkg.Main
+										pkg.App.Main
 									</mainClass>
 								</transformer>
 							</transformers>
@@ -191,7 +191,7 @@
 							<archive>
 								<manifest>
 									<mainClass>
-										pkg.Main
+										pkg.App.Main
 									</mainClass>
 								</manifest>
 							</archive>
